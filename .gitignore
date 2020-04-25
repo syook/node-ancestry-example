@@ -2,10 +2,8 @@
 .vscode
 
 node_modules
-logs
 
 # configs
-src/config/secrets.js
 .env
 
 .DS_Store

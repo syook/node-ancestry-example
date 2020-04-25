@@ -1,6 +1,6 @@
-const Machine = require('./machine');
-const SubAssembly = require('./subAssembly');
-const Component = require('./component');
-const WorkOrder = require('./workOrder');
+import Machine from './machine';
+import SubAssembly from './subAssembly';
+import Component from './component';
+import WorkOrder from './workOrder';
 
-module.exports = { Machine, SubAssembly, Component, WorkOrder };
+export { Machine, SubAssembly, Component, WorkOrder };

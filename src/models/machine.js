@@ -1,4 +1,4 @@
-const { mongoose, Schema } = require('../config/db');
+import { mongoose, Schema } from '../config/db';
 
 const MachineSchema = new Schema(
   {
@@ -13,4 +13,4 @@ const MachineSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model('Machine', MachineSchema);
+export default mongoose.model('Machine', MachineSchema);

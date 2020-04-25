@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
@@ -34,4 +34,4 @@ process.on('SIGINT', () => {
   });
 });
 
-module.exports = { mongoose, Schema };
+export { mongoose, Schema };

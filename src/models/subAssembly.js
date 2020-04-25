@@ -1,4 +1,4 @@
-const { mongoose, Schema } = require('../config/db');
+import { mongoose, Schema } from '../config/db';
 
 const SubAssemblySchema = new Schema(
   {
@@ -19,4 +19,4 @@ const SubAssemblySchema = new Schema(
   }
 );
 
-module.exports = mongoose.model('SubAssembly', SubAssemblySchema);
+export default mongoose.model('SubAssembly', SubAssemblySchema);

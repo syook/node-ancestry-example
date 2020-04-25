@@ -4,7 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "test": "jest --runInBand --detectOpenHandles  --forceExit"
+    "test": "jest --runInBand --detectOpenHandles  --forceExit "
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,9 @@
     "mongoose": "^5.9.10"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-jest": "^25.4.0",
     "jest": "^25.4.0"
   }
 }

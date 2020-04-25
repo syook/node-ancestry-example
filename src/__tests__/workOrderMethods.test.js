@@ -1,8 +1,8 @@
-const { mongoose } = require('../config/db');
+import { mongoose } from '../config/db';
 
-const createEntityDocuments = require('../scripts/createEntityDocuments');
+import createEntityDocuments from '../scripts/createEntityDocuments';
 
-const { WorkOrder } = require('../models');
+import { WorkOrder } from '../models';
 
 test('createEntityDocuments is a function', async () => {
   expect(typeof createEntityDocuments).toEqual('function');

@@ -1,4 +1,4 @@
-const { mongoose, Schema } = require('../config/db');
+import { mongoose, Schema } from '../config/db';
 
 const ComponentSchema = new Schema(
   {
@@ -19,4 +19,4 @@ const ComponentSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model('Component', ComponentSchema);
+export default mongoose.model('Component', ComponentSchema);

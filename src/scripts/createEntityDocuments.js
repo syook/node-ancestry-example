@@ -1,4 +1,4 @@
-const { Machine, SubAssembly, Component, WorkOrder } = require('../models');
+import { Machine, SubAssembly, Component, WorkOrder } from '../models';
 
 const createEntityDocuments = async () => {
   try {
@@ -37,4 +37,4 @@ const createEntityDocuments = async () => {
   }
 };
 
-module.exports = createEntityDocuments;
+export default createEntityDocuments;

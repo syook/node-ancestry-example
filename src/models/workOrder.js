@@ -1,4 +1,4 @@
-const { mongoose, Schema } = require('../config/db');
+import { mongoose, Schema } from '../config/db';
 
 const WorkOrderSchema = new Schema(
   {
@@ -115,4 +115,4 @@ WorkOrderSchema.methods.siblings = async function () {
   }
 };
 
-module.exports = mongoose.model('WorkOrder', WorkOrderSchema);
+export default mongoose.model('WorkOrder', WorkOrderSchema);
