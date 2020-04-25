@@ -18,7 +18,7 @@ $ yarn
 
 ## Running the tests
 
-- [test cases file](https://github.com/syook/node-ancestry-example/src/__tests__/workOrderMethods.test.js)
+- [test cases file](https://github.com/syook/node-ancestry-example/blob/master/src/__tests__/workOrderMethods.test.js)
 
 ```
 $ yarn test
