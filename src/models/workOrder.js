@@ -22,6 +22,7 @@ const WorkOrderSchema = new Schema(
   }
 );
 
+// TODO: move all this methods into a plugin, then connect schema where this is needed
 // ancestor ids of the record
 WorkOrderSchema.methods.ancestryIds = async function () {
   try {
@@ -59,7 +60,6 @@ WorkOrderSchema.methods.rootId = async function () {
 WorkOrderSchema.methods.parent = async function () {
   try {
     const parentId = await this.parentId();
-
     if (!parentId) return null;
 
     const parentWorkOrder = await this.model('WorkOrder').findOne({ _id: parentId });
@@ -73,7 +73,6 @@ WorkOrderSchema.methods.parent = async function () {
 WorkOrderSchema.methods.root = async function () {
   try {
     const rootId = await this.rootId();
-
     if (!rootId) return null;
 
     const rootWorkOrder = await this.model('WorkOrder').findOne({ _id: rootId });
@@ -86,6 +85,8 @@ WorkOrderSchema.methods.root = async function () {
 // direct children of the record
 WorkOrderSchema.methods.children = async function () {
   try {
+    if (!this.id) return [];
+
     const childrenWorkOrders = await this.model('WorkOrder').find({
       ancestry: this.ancestry ? `${this.ancestry}/${this.id}` : this.id,
     });
@@ -98,6 +99,8 @@ WorkOrderSchema.methods.children = async function () {
 // direct and indirect children of the record
 WorkOrderSchema.methods.descendants = async function () {
   try {
+    if (!this.id) return [];
+
     const descendantWorkOrders = await this.model('WorkOrder').find({ ancestry: new RegExp(this.id, 'i') });
     return descendantWorkOrders;
   } catch (error) {
@@ -108,6 +111,8 @@ WorkOrderSchema.methods.descendants = async function () {
 // siblings of the record, the record itself is included*
 WorkOrderSchema.methods.siblings = async function () {
   try {
+    if (!this.ancestry) return [];
+
     const siblingWorkOrders = await this.model('WorkOrder').find({ ancestry: this.ancestry });
     return siblingWorkOrders;
   } catch (error) {

@@ -18,7 +18,7 @@ const createEntityDocuments = async () => {
       const subAssemblyWorkOrder = await WorkOrder.create({
         workOrderableId: subAssembly._id,
         workOrderableType: 'SubAssembly',
-        ancestry: machineWorkOrder._id.toString(),
+        ancestry: machineWorkOrder.id,
       });
 
       const subAssemblyComponents = await Component.find({ subAssemblyId: subAssembly._id });
