@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const { mongoURI } = require('./secrets');
 
 mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
 
+const mongoURI = `mongodb://localhost:27017/node-ancestry-example-${process.env.NODE_ENV}`;
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
